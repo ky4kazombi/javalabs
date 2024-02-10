@@ -19,5 +19,24 @@ public class Laba1 {
         int Csum = sum(C);
         int result = (Asum + Bsum + Csum) / 2;
         System.out.println(result);
+        double R1 = 10;
+        double R2 = 20;
+        double R3 = 30;
+        double I = 5;
+        double U = 100;
+
+        calculateVoltages(R1, R2, R3, I, U);
     }
+    public static void calculateVoltages(double R1, double R2, double R3, double I, double U) {
+        double totalResistance = R1 + R2 + R3;
+
+        double voltage1 = I * R1 / totalResistance * U;
+        double voltage2 = I * R2 / totalResistance * U;
+        double voltage3 = I * R3 / totalResistance * U;
+
+        System.out.println("Voltage on R1: " + voltage1 + " V");
+        System.out.println("Voltage on R2: " + voltage2 + " V");
+        System.out.println("Voltage on R3: " + voltage3 + " V");
+    }
+
 }
