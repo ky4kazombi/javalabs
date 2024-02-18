@@ -39,5 +39,18 @@ public class Laba1_1 {
         }
         return shortest;
     }
-
+    public static void increasingStings(String[] strings) {
+        for (int i = 0; i < strings.length - 1; i++) {
+            for (int j = 0; j < strings.length; j++) {
+                if (strings[i].length() > strings[j].length()) {
+                    String temp = strings[i];
+                    strings[i] = strings[j];
+                    strings[j] = temp;
+                } 
+            } 
+        }
+        for (int i = 0; i < strings.length; i++) {
+            System.err.println(strings[i]);
+        }
+    }
 }
