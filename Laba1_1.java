@@ -1,39 +1,43 @@
- //
- // TODO Debug shit
- //
-import java.lang.Integer;
-import static java.lang.Math.min;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Laba1 {
+/**
+ * Laba1_1
+ */
+public class Laba1_1 {
+
     public static void main(String[] args) {
-
-    }
-    public static void zadaine1(int n) {
-        String nstr;
-        int nlen = 9999999;
-        for (int i = 0; i < n; i++) {
-            Scanner scanner = new Scanner(System.in);
-            nstr  = scanner.nextLine();
-            nlen = Math.min(nlen, nstr.length());
-
+        int n = 0;
+        
+        System.err.println("Введите число строк:");
+        Scanner sc1 = new Scanner(System.in);
+        try {
+            n = sc1.nextInt();
+        } catch (InputMismatchException fq) {
+            System.err.println("NaN");
         }
-        System.out.println(nstr, nstr.length());
-    }
-
-    public static void zadaine2(int n) {
-        String strArr = new String[n];
+        String[] str = new String[n];
+        Scanner sc2 = new Scanner(System.in);
         for (int i = 0; i < n; i++) {
-            Scanner scanner = new Scanner(System.in);
-            strArr[i] = scanner.nextLine();
-        }
-        strArr.sort(W, (a, b)->Integer.compare(a.length(), b.length()));
-
-        for (int i = 0; i < n; i++) {
-            System.out.println(strArr[i]);
-        }
+            System.err.println("Введите строку " + (i+1)); 
+            str[i] = sc2.nextLine();
+        } 
+        String shortestString = findShortestString(str);
+        System.out.println("Самая короткая строка: " + shortestString);
+        
     }
-    public static void zadanie3(int n) {
+    public static String findShortestString(String[] strings) {
+        if (strings.length == 0) {
+            return null;
+        }
 
+        String shortest = strings[0];
+        for (int i = 1; i < strings.length; i++) {
+            if (strings[i].length() < shortest.length()) {
+                shortest = strings[i];
+            }
+        }
+        return shortest;
     }
+
 }
