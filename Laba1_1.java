@@ -53,4 +53,28 @@ public class Laba1_1 {
             System.err.println(strings[i]);
         }
     }
+    public static void printAvgString(String[] strings) {
+        int avg = 0;
+        for (int i = 0; i < strings.length; i++) {
+            avg += strings[i].length();
+        }
+        avg = avg / strings.length;
+        for (int i = 0; i < strings.length; i++) {
+            if (strings[i].length() < avg) {
+                System.err.println(strings[i] + strings[i].length());
+            }
+        }
+    }
+    /**
+     * Доделать бы желательно
+     */
+    public static void zadanie4() {
+        Scanner sc = new Scanner(System.in);
+        int k = sc.nextInt();
+        String text = "alkjglfkjadlkjf";   
+        for (int i = 0; i < text.length(); i += k) {
+            text[i] = '2'; 
+        }
+
+    }
 }
