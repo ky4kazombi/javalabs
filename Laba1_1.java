@@ -9,7 +9,7 @@ public class Laba1_1 {
     public static void main(String[] args) {
         int n = 0;
         
-        System.err.println("Введите число строк:");
+        System.out.println("Введите число строк:");
         Scanner sc1 = new Scanner(System.in);
         try {
             n = sc1.nextInt();
@@ -19,7 +19,7 @@ public class Laba1_1 {
         String[] str = new String[n];
         Scanner sc2 = new Scanner(System.in);
         for (int i = 0; i < n; i++) {
-            System.err.println("Введите строку " + (i+1)); 
+            System.out.println("Введите строку " + (i+1)); 
             str[i] = sc2.nextLine();
         } 
         String shortestString = findShortestString(str);
@@ -50,7 +50,7 @@ public class Laba1_1 {
             } 
         }
         for (int i = 0; i < strings.length; i++) {
-            System.err.println(strings[i]);
+            System.out.println(strings[i]);
         }
     }
     public static void printAvgString(String[] strings) {
@@ -61,7 +61,7 @@ public class Laba1_1 {
         avg = avg / strings.length;
         for (int i = 0; i < strings.length; i++) {
             if (strings[i].length() < avg) {
-                System.err.println(strings[i] + strings[i].length());
+                System.out.println(strings[i] + strings[i].length());
             }
         }
     }
