@@ -65,16 +65,51 @@ public class Laba1_1 {
             }
         }
     }
-    /**
-     * Доделать бы желательно
-     */
+
     public static void zadanie4() {
         Scanner sc = new Scanner(System.in);
         int k = sc.nextInt();
         String text = "alkjglfkjadlkjf";   
+        StringBuilder str2 = new StringBuilder(text); 
         for (int i = 0; i < text.length(); i += k) {
-            text[i] = '2'; 
+            str2.setCharAt(i, '2');
         }
+        System.out.println(str2);
+    }
+    public static void zadanie5() {
+        String str1 = "Авылдоаыдвлоаф";
+        str1 = str1.replace("в", "3");
+        System.out.println(str1);
+    }
+    public static void zadanie13() {
+        String text = "Это пример текста. Здесь есть несколько предложений.";
 
+        String[] sentences = text.split("\\.");
+
+        for (String sentence : sentences) {
+            int vowels = 0;
+            int consonants = 0;
+
+            sentence = sentence.replaceAll("[^а-яА-Яa-zA-Z]", "").toLowerCase();
+
+            for (int i = 0; i < sentence.length(); i++) {
+                char ch = sentence.charAt(i);
+                if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+                    ch == 'а' || ch == 'е' || ch == 'ё' || ch == 'и' || ch == 'о' || ch == 'у' || ch == 'ы' || ch == 'э' || ch == 'ю' || ch == 'я') {
+                    vowels++;
+                } else if ((ch >= 'a' && ch <= 'z') || (ch >= 'а' && ch <= 'я')) {
+                    consonants++;
+                }
+            }
+
+            System.out.println("В предложении: \"" + sentence.trim() + "\"");
+            if (vowels > consonants) {
+                System.out.println("Больше гласных букв");
+            } else if (consonants > vowels) {
+                System.out.println("Больше согласных букв");
+            } else {
+                System.out.println("Гласных и согласных букв одинаковое количество");
+            }
+        }        
     }
 }
