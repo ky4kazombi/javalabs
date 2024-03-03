@@ -22,9 +22,9 @@ public class Laba2 {
        int nine = (zero + number);
        nine = (char)nine;
        System.out.println(nine);
-
-
        zadanie4();
+       zadanie5();
+       zadanie6();
    }
     public static void zadanie4() {
         double d = (short)2.50256e2d;
@@ -37,6 +37,17 @@ public class Laba2 {
 
     }
     public static void zadanie5() {
-
+        long l = 1234_564_890L;
+        int x =  0b1000_1100_1010;
+        double m =  110_987_654_6299.123_34;
+        float f = l++ + 10 + ++x - (float) m;
+        l = (long) f / 1000;
+        System.out.println(l);
+    }
+    public static void zadanie6() {
+        int a = 50;
+        int b = 17;
+        double d = (float) a / (float)b;
+        System.out.println(d);
     }
 }
