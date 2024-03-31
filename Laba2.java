@@ -3,19 +3,20 @@ import java.lang.Math;
 
 public class Laba2 {
    public static void main(String[] args) {
+    // Zadanie 1
        int a = 15;
        int b = 4;
        float c = a / b;
        double d  = (float)a * 1*Math.exp(-3) + (double)c;
        System.out.println((float)d);
 
-
+    // zadaine 2
        float f = (float) 128.50;
        int i = (int) f;
        int b1 = (int) (i + f);
        System.out.println((byte)b1);
 
-       //
+       // Zadanie 3
        short number = 9;
        char zero = '0';
 
@@ -25,6 +26,9 @@ public class Laba2 {
        zadanie4();
        zadanie5();
        zadanie6();
+       zadanie7();
+       zadanie8();
+
    }
     public static void zadanie4() {
         double d = (short)2.50256e2d;
@@ -48,6 +52,22 @@ public class Laba2 {
         int a = 50;
         int b = 17;
         double d = (float) a / (float)b;
+        System.out.println(d);
+    }
+    public static void zadanie7() {
+        int a = 257;
+        int b = 4;
+        int c = 3;
+        int e = 2;
+        double d = (double) (a + b) / c / e;
+        System.out.println(d);
+    }
+    public static void zadanie8() {
+        int a = 5;
+        int b = 4;
+        int c = 3;
+        int e = 2;
+        double d = a + (double) b / c / e; 
         System.out.println(d);
     }
 }
