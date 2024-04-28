@@ -195,4 +195,223 @@ public class Laba3 {
     return true;
   }
 
+  // Part zadan
+  public static void zadanie21(String str) {
+    char lastchr = str.charAt(str.length());
+    System.out.println(lastchr);
+    if (str.endsWith("!!!")) {
+      System.out.println("yes 1");
+    }
+    if (str.startsWith("I like")) {
+      System.out.println("yes 2");
+    }
+    if (str.contains("Java")) {
+      System.out.println("yes 3");
+    }
+    String str1 = "I like Java!!!";
+    String subStr = "Java";
+
+    // Преобразуем строку и подстроку к нижнему регистру для поиска без учета
+    // регистра
+    String lowerCaseStr = str1.toLowerCase();
+    String lowerCaseSubStr = subStr.toLowerCase();
+
+    // Находим позицию подстроки в строке (или -1, если подстрока не найдена)
+    int position = lowerCaseStr.indexOf(lowerCaseSubStr);
+
+    if (position != -1) {
+      System.out.println("Подстрока \"" + subStr + "\" найдена на позиции " + position);
+    } else {
+      System.out.println("Подстрока \"" + subStr + "\" не найдена в строке");
+    }
+    String lowestr = str.toLowerCase();
+    String upperstr = str.toUpperCase();
+    System.out.println(lowestr);
+    System.out.println(upperstr);
+
+  }
+
+  public static void zadanie22() {
+    int num1 = 3;
+    int num2 = 56;
+
+    // Составляем строки с вычислениями
+    StringBuilder sb = new StringBuilder();
+    sb.append(num1).append(" + ").append(num2).append(" = ").append(num1 + num2);
+    System.out.println(sb);
+
+    sb = new StringBuilder();
+    sb.append(num1).append(" - ").append(num2).append(" = ").append(num1 - num2);
+    System.out.println(sb);
+
+    sb = new StringBuilder();
+    sb.append(num1).append(" * ").append(num2).append(" = ").append(num1 * num2);
+    System.out.println(sb);
+
+    // Заменяем символ "=" на слово "равно" с использованием методов insert() и
+    // deleteCharAt()
+    sb = new StringBuilder();
+    sb.append(num1).append(" + ").append(num2).append(" = ").append(num1 + num2);
+    int index = sb.indexOf("=");
+    sb.insert(index, "равно").deleteCharAt(index + 5);
+    System.out.println(sb);
+
+    // Заменяем символ "=" на слово "равно" с использованием метода replace()
+    sb = new StringBuilder();
+    sb.append(num1).append(" - ").append(num2).append(" = ").append(num1 - num2);
+    sb.replace(sb.indexOf("="), sb.indexOf("=") + 1, "равно");
+    System.out.println(sb);
+  }
+
+  public static void zadanie23() {
+    String input = "Object-oriented programming is a programming language model organized around objects rather than \"actions\" and data rather than logic. Object-oriented programming blabla. Object-oriented programming bla.";
+    String output = replaceEverySecondOccurrence(input);
+    System.out.println(output);
+  }
+
+  public static String replaceEverySecondOccurrence(String input) {
+    String target = "object-oriented programming";
+    String replacement = "OOP";
+
+    int index = -1;
+    int count = 0;
+    while ((index = input.toLowerCase().indexOf(target, index + 1)) != -1) {
+      count++;
+      if (count % 2 == 0) {
+        input = input.substring(0, index) + replacement + input.substring(index + target.length());
+      }
+    }
+
+    return input;
+  }
+
+  public static void zadanie24() {
+    System.out.println(getMiddleChars("string")); // Output: ri
+    System.out.println(getMiddleChars("code")); // Output: od
+    System.out.println(getMiddleChars("Practice")); // Output: ct
+  }
+
+  public static String getMiddleChars(String str) {
+    int length = str.length();
+    int middle = length / 2;
+    return str.substring(middle - 1, middle + 1);
+  }
+
+  public static void zadanie25() {
+    formatAndPrint("Иванов", 5, "Математика");
+    formatAndPrint("Петров", 4, "Физика");
+  }
+
+  public static void formatAndPrint(String surname, int grade, String subject) {
+    String formattedString = String.format("Студент %-15s получил %3d по %-10s.", surname, grade, subject);
+    System.out.println(formattedString);
+  }
+
+  public static void zadanie26() {
+    String input = "Versions: Java 5, Java 6, Java 7, Java 8, Java 12.";
+    findAllAndPrintMatches(input);
+  }
+
+  public static void findAllAndPrintMatches(String input) {
+    Pattern pattern = Pattern.compile("Java \\d+");
+    Matcher matcher = pattern.matcher(input);
+
+    while (matcher.find()) {
+      System.out.println(matcher.group());
+    }
+  }
+
+  public static void zadanie27() {
+    String input = "fffff ab f 1234 jkjk";
+    String minUniqueWord = findWordWithMinUniqueChars(input);
+    System.out.println("Слово с минимальным количеством различных символов: " + minUniqueWord);
+  }
+
+  public static String findWordWithMinUniqueChars(String input) {
+    String[] words = input.split("\\s+"); // Разбиваем строку на слова
+    String minUniqueWord = null;
+    int minUniqueChars = Integer.MAX_VALUE;
+
+    for (String word : words) {
+      int uniqueChars = countUniqueChars(word);
+      if (uniqueChars < minUniqueChars) {
+        minUniqueChars = uniqueChars;
+        minUniqueWord = word;
+      }
+    }
+
+    return minUniqueWord;
+  }
+
+  public static int countUniqueChars(String word) {
+    int uniqueChars = 0;
+    boolean[] visited = new boolean[256]; // Массив для отслеживания посещенных символов
+
+    for (char c : word.toCharArray()) {
+      if (!visited[c]) {
+        visited[c] = true;
+        uniqueChars++;
+      }
+    }
+
+    return uniqueChars;
+  }
+
+  public static void zadanie28() {
+    String sentence = "One two three раз два три one1 two2 123";
+    int countLatinWords = countLatinWords(sentence);
+    System.out.println("Количество слов, содержащих только символы латинского алфавита: " + countLatinWords);
+  }
+
+  public static int countLatinWords(String sentence) {
+    String[] words = sentence.split("\\s+");
+    int count = 0;
+
+    for (String word : words) {
+      if (word.matches("[a-zA-Z]+")) {
+        count++;
+      }
+    }
+
+    return count;
+  }
+
+  public static void zadanie29() {
+    String sentence = "Если есть хвосты по дз, начните с 1 не сданного задания. 123 324 111 4554";
+    String palindromeWord = findPalindromeWord(sentence);
+    if (palindromeWord != null) {
+      System.out.println("Найденное слово-палиндром: " + palindromeWord);
+    } else {
+      System.out.println("Среди слов, состоящих только из цифр, нет палиндромов.");
+    }
+  }
+
+  public static String findPalindromeWord(String sentence) {
+    String[] words = sentence.split("\\s+");
+
+    for (String word : words) {
+      if (word.matches("\\d+")) { // Проверка, что слово состоит только из цифр
+        if (isPalindrome(word)) {
+          return word;
+        }
+      }
+    }
+
+    return null;
+  }
+
+  public static boolean isPalindrome(String word) {
+    int left = 0;
+    int right = word.length() - 1;
+
+    while (left < right) {
+      if (word.charAt(left) != word.charAt(right)) {
+        return false;
+      }
+      left++;
+      right--;
+    }
+
+    return true;
+  }
 }
