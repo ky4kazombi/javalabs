@@ -184,5 +184,22 @@ public class Main {
             }
         } 
     }
+    public static void zadanie14() {
+        Pattern pattern = Pattern.compile("c+a+b");
+        Matcher matcher = pattern.matcher("cccab");
+        boolean b = matcher.matches();
+        System.out.println(b); 
+    }
+    public static void zadanie15() {
+        System.out.println(test("google.com"));
+        System.out.println(test("reference1.ua"));
+        System.out.println(test("reference1.org"));
+    }
+
+    public static boolean test(String testString) {
+        Pattern pattern = Pattern.compile(".+\\.(com|ua|ru|org)");
+        Matcher matcher = pattern.matcher(testString);
+        return matcher.matches();
+    } 
 }
 
