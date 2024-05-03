@@ -1,8 +1,9 @@
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Main {
+public class Laba3_1 {
     public static void main(String[] args) {
+	    zadanie1();
     }
     public static void zadanie1() {
         String input = "abcdefghijklmnopqrstuv18340";
