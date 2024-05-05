@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.laba4.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label fx:id="label1" />
+   <Label fx:id="label2" />
+    <Button onAction="#onHelloButtonClick" text="Задание1" />
+   <Button onAction="#onHelloButtonClick2" text="Задание2" />
+   <Button onAction="#onHelloButtonClick3" text="Задание3" />
+   <Button onAction="#onHelloButtonClick4" text="Задание 4" />
+   <Button onAction="#onHelloButtonClick5" text="Задание 5" />
+   <Button onAction="#onHelloButtonClick6" text="Задание 6" />
+   <Button onAction="#onHelloButtonClick7" text="Задание 7" />
+</VBox>

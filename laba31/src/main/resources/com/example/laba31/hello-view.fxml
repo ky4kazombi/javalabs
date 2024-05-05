@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.laba31.HelloController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+
+  <Label fx:id="welcomeText" />
+  <Button onAction="#onHelloButtonClick1" text="Задание 1" />
+   <Button onAction="#onHelloButtonClick2" text="Задание 2" />
+   <Button onAction="#onHelloButtonClick3" text="Задание 3" />
+   <Button onAction="#onHelloButtonClick4" text="Задание 4" />
+   <Button onAction="#onHelloButtonClick5" text="Задание 5" />
+   <Button onAction="#onHelloButtonClick6" text="Задание 6" />
+   <Button onAction="#onHelloButtonClick7" text="Задание 7" />
+   <Button onAction="#onHelloButtonClick8" text="Задание 8" />
+   <Button onAction="#onHelloButtonClick9" text="Задание 9" />
+   <Button onAction="#onHelloButtonClick10" text="Задание 10" />
+   <Button onAction="#onHelloButtonClick11" text="Задание 11" />
+   <Button onAction="#onHelloButtonClick12" text="Задание 12" />
+   <Button onAction="#onHelloButtonClick13" text="Задание 13" />
+   <Button onAction="#onHelloButtonClick14" text="Задание 14" />
+   <Button onAction="#onHelloButtonClick15" text="Задание 15" />
+</VBox>
