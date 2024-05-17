@@ -1,6 +1,10 @@
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Collections;
+import java.util.Comparator;
+
+
 
 public class Laba3 {
   public static void main(String[] args) {
@@ -16,38 +20,43 @@ public class Laba3 {
     int longestLenght = 0;
 
     for (int i = 0; i < args.length; i++) {
-      if (args[i].length() < shortestLength) {
+      if (args[i].length() < shortestLenght) {
         shortestString = args[i];
-        shortestLength = args[i].length();
+        shortestLenght = args[i].length();
       }
-      if (args[i].length() > longestLength) {
+      if (args[i].length() > longestLenght) {
         longestString = args[i];
-        longestLength = args[i].length();
+        longestLenght = args[i].length();
       }
     }
 
-    System.out.println("Самая короткая строка: " + shortestString + ", ее длина: " + shortestLength);
-    System.out.println("Самая длинная строка: " + longestString + ", ее длина: " + longestLength);
+    System.out.println("Самая короткая строка: " + shortestString + ", ее длина: " + shortestLenght);
+    System.out.println("Самая длинная строка: " + longestString + ", ее длина: " + longestLenght);
   }
 
   public static void zadanie2(String args[]) {
-    Collections.sort(args, Comparator.comparing(String::length));
+    // Создание копии списка args
+    List<String> copiedArgs = new ArrayList<>(Arrays.asList(args));
+
+    // Сортировка строк в порядке возрастания длины
+    Collections.sort(copiedArgs, Comparator.comparing(String::length));
 
     // Вывод строк в порядке возрастания длины
     System.out.println("Строки в порядке возрастания длины:");
-    for (String str : args) {
+    for (String str : copiedArgs) {
       System.out.println(str);
     }
 
     // Сортировка строк по убыванию длины
-    Collections.sort(args, Comparator.comparing(String::length).reversed());
+    Collections.sort(copiedArgs, Comparator.comparing(String::length).reversed());
 
     // Вывод строк в порядке убывания длины
     System.out.println("Строки в порядке убывания длины:");
-    for (String str : args) {
+    for (String str : copiedArgs) {
       System.out.println(str);
     }
   }
+
 
   public static void zadanie3(String[] args) {
     String minUniqueCharsWord = null;
@@ -80,8 +89,8 @@ public class Laba3 {
         }
       }
     }
-    System.out.println("Количество слов, содержащих только символы латинского алфавита: " + latinWordsCount);
-    System.out.println("Количество таких слов с равным числом гласных и согласных букв: " + equalVowelsConsonantsCount);
+    System.out.println("Количество слов, содержащих только символы латинского алфавита: " + latingWordsCount);
+    System.out.println("Количество таких слов с равным числом гласных и согласных букв: " + equalVowelsAndConsonants);
   }
 
   public static boolean isLatinWord(String word) {
